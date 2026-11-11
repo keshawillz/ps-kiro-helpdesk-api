@@ -27,10 +27,76 @@ class FakeTable:
             item[name] = ExpressionAttributeValues[":" + placeholder[1:]]
         return {"Attributes": dict(item)}
 
+    # Maximum items returned per query page; None means one unlimited page.
+    page_size: int | None = None
+
+    def query(self, **kwargs):
+        """Query an index with status = :closed AND closedAt BETWEEN :start AND :end.
+
+        Results are sorted by (closedAt, ticketId). Items without closedAt are
+        not in the index. Pages hold at most page_size items, and a page that
+        is not the last carries LastEvaluatedKey (index keys plus ticketId).
+        """
+        if not kwargs.get("IndexName"):
+            raise ValueError("FakeTable.query requires IndexName")
+        values = kwargs["ExpressionAttributeValues"]
+        closed, start, end = values[":closed"], values[":start"], values[":end"]
+
+        matches = sorted(
+            (
+                item
+                for item in self.items.values()
+                if item.get("status") == closed
+                and item.get("closedAt") is not None
+                and start <= item["closedAt"] <= end
+            ),
+            key=lambda item: (item["closedAt"], item["ticketId"]),
+        )
+
+        last = kwargs.get("ExclusiveStartKey")
+        if last is not None:
+            after = (last["closedAt"], last["ticketId"])
+            matches = [m for m in matches if (m["closedAt"], m["ticketId"]) > after]
+
+        page = matches if self.page_size is None else matches[: self.page_size]
+        result = {"Items": [dict(item) for item in page]}
+        if self.page_size is not None and len(matches) > self.page_size:
+            tail = page[-1]
+            result["LastEvaluatedKey"] = {
+                "ticketId": tail["ticketId"],
+                "status": tail["status"],
+                "closedAt": tail["closedAt"],
+            }
+        return result
+
+
+class FakeS3:
+    """Just enough of the boto3 S3 client for the export."""
+
+    def __init__(self) -> None:
+        self.objects: dict[tuple[str, str], bytes] = {}
+        self.calls: list[dict] = []
+
+    def put_object(self, Bucket, Key, Body, ContentType):
+        self.calls.append(
+            {"Bucket": Bucket, "Key": Key, "Body": Body, "ContentType": ContentType}
+        )
+        self.objects[(Bucket, Key)] = Body
+
 
 @pytest.fixture
 def table():
     return FakeTable()
+
+
+@pytest.fixture
+def s3():
+    return FakeS3()
+
+
+@pytest.fixture
+def bucket_name():
+    return "helpdesk-finance-exports-123456789012"
 
 
 @pytest.fixture(autouse=True)

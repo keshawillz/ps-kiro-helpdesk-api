@@ -5,6 +5,8 @@ from aws_cdk import aws_dynamodb as dynamodb
 from aws_cdk import aws_lambda as lambda_
 from constructs import Construct
 
+from nightly_export import INDEX_NAME, NightlyExport
+
 TABLE_NAME = "helpdesk-tickets"
 
 
@@ -34,6 +36,26 @@ class HelpdeskApiStack(cdk.Stack):
             ),
             # Sandbox setting. Never copy into a production stack.
             removal_policy=cdk.RemovalPolicy.DESTROY,
+        )
+
+        # Read path for the nightly export: closed tickets by closedAt.
+        self.table.add_global_secondary_index(
+            index_name=INDEX_NAME,
+            partition_key=dynamodb.Attribute(
+                name="status", type=dynamodb.AttributeType.STRING
+            ),
+            sort_key=dynamodb.Attribute(
+                name="closedAt", type=dynamodb.AttributeType.STRING
+            ),
+            projection_type=dynamodb.ProjectionType.INCLUDE,
+            non_key_attributes=["requester", "priority", "createdAt"],
+        )
+
+        NightlyExport(
+            self,
+            "NightlyExport",
+            table=self.table,
+            finance_bucket_name=finance_bucket_name,
         )
 
         code = lambda_.Code.from_asset("src")

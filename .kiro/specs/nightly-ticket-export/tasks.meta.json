@@ -1,0 +1,351 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1.1 Extend `tests/conftest.py` and create the export package": [
+      {
+        "executionId": "a6f22090-2e88-4b78-a43e-4ee728352680",
+        "chatSessionId": "sess_5ab21d47-c33a-4743-a722-da5f5743f8fe",
+        "timestamp": 1794404814415
+      },
+      {
+        "executionId": "a6f22090-2e88-4b78-a43e-4ee728352680",
+        "chatSessionId": "sess_5ab21d47-c33a-4743-a722-da5f5743f8fe",
+        "timestamp": 1794404861432
+      }
+    ],
+    "1. Add test fakes and package scaffold": [
+      {
+        "executionId": "a6f22090-2e88-4b78-a43e-4ee728352680",
+        "chatSessionId": "sess_5ab21d47-c33a-4743-a722-da5f5743f8fe",
+        "timestamp": 1794404861463
+      }
+    ],
+    "2.1 Create `src/export/nightly_export.py`": [
+      {
+        "executionId": "f3185eef-8416-4143-9a12-777b19df4fbe",
+        "chatSessionId": "sess_c155406e-21a3-499b-9100-33cc06b307d1",
+        "timestamp": 1794405071041
+      },
+      {
+        "executionId": "f3185eef-8416-4143-9a12-777b19df4fbe",
+        "chatSessionId": "sess_c155406e-21a3-499b-9100-33cc06b307d1",
+        "timestamp": 1794405130457
+      }
+    ],
+    "2.2 Write parametrized test for ticket selection": [
+      {
+        "executionId": "f3185eef-8416-4143-9a12-777b19df4fbe",
+        "chatSessionId": "sess_c155406e-21a3-499b-9100-33cc06b307d1",
+        "timestamp": 1794405138458
+      },
+      {
+        "executionId": "f3185eef-8416-4143-9a12-777b19df4fbe",
+        "chatSessionId": "sess_c155406e-21a3-499b-9100-33cc06b307d1",
+        "timestamp": 1794405177882
+      }
+    ],
+    "2.3 Write parametrized test for CSV format": [
+      {
+        "executionId": "f3185eef-8416-4143-9a12-777b19df4fbe",
+        "chatSessionId": "sess_c155406e-21a3-499b-9100-33cc06b307d1",
+        "timestamp": 1794405138489
+      },
+      {
+        "executionId": "f3185eef-8416-4143-9a12-777b19df4fbe",
+        "chatSessionId": "sess_c155406e-21a3-499b-9100-33cc06b307d1",
+        "timestamp": 1794405178086
+      }
+    ],
+    "2.4 Write parametrized test for destination key": [
+      {
+        "executionId": "f3185eef-8416-4143-9a12-777b19df4fbe",
+        "chatSessionId": "sess_c155406e-21a3-499b-9100-33cc06b307d1",
+        "timestamp": 1794405139352
+      },
+      {
+        "executionId": "f3185eef-8416-4143-9a12-777b19df4fbe",
+        "chatSessionId": "sess_c155406e-21a3-499b-9100-33cc06b307d1",
+        "timestamp": 1794405178925
+      }
+    ],
+    "2.5 Write unit tests for empty day and run date": [
+      {
+        "executionId": "f3185eef-8416-4143-9a12-777b19df4fbe",
+        "chatSessionId": "sess_c155406e-21a3-499b-9100-33cc06b307d1",
+        "timestamp": 1794405139697
+      },
+      {
+        "executionId": "f3185eef-8416-4143-9a12-777b19df4fbe",
+        "chatSessionId": "sess_c155406e-21a3-499b-9100-33cc06b307d1",
+        "timestamp": 1794405179478
+      }
+    ],
+    "2. Implement the export handler": [
+      {
+        "executionId": "f3185eef-8416-4143-9a12-777b19df4fbe",
+        "chatSessionId": "sess_c155406e-21a3-499b-9100-33cc06b307d1",
+        "timestamp": 1794405179509
+      },
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409694382
+      }
+    ],
+    "3. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "5a676c6b-ad66-44f9-9d12-e8ba836ff64d",
+        "chatSessionId": "sess_016a95e1-e67f-4440-ae7f-5a7c21942552",
+        "timestamp": 1794405915534
+      },
+      {
+        "executionId": "5a676c6b-ad66-44f9-9d12-e8ba836ff64d",
+        "chatSessionId": "sess_016a95e1-e67f-4440-ae7f-5a7c21942552",
+        "timestamp": 1794405925884
+      },
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409111389
+      },
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409772570
+      },
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409785032
+      }
+    ],
+    "4.1 Create `infra/nightly_export.py`": [
+      {
+        "executionId": "3c467762-5082-4717-97b9-e05e804b3b28",
+        "chatSessionId": "sess_87c83905-954b-4f93-ba6f-a80a01dacb28",
+        "timestamp": 1794406397544
+      },
+      {
+        "executionId": "3c467762-5082-4717-97b9-e05e804b3b28",
+        "chatSessionId": "sess_87c83905-954b-4f93-ba6f-a80a01dacb28",
+        "timestamp": 1794406505435
+      }
+    ],
+    "4.2 Instantiate the construct in `infra/helpdesk_stack.py`": [
+      {
+        "executionId": "3c467762-5082-4717-97b9-e05e804b3b28",
+        "chatSessionId": "sess_87c83905-954b-4f93-ba6f-a80a01dacb28",
+        "timestamp": 1794406507820
+      },
+      {
+        "executionId": "3c467762-5082-4717-97b9-e05e804b3b28",
+        "chatSessionId": "sess_87c83905-954b-4f93-ba6f-a80a01dacb28",
+        "timestamp": 1794406527506
+      }
+    ],
+    "4.4 Verify synthesis": [
+      {
+        "executionId": "3c467762-5082-4717-97b9-e05e804b3b28",
+        "chatSessionId": "sess_87c83905-954b-4f93-ba6f-a80a01dacb28",
+        "timestamp": 1794406530820
+      },
+      {
+        "executionId": "3c467762-5082-4717-97b9-e05e804b3b28",
+        "chatSessionId": "sess_87c83905-954b-4f93-ba6f-a80a01dacb28",
+        "timestamp": 1794406551984
+      },
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409111457
+      },
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409698479
+      },
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409769374
+      }
+    ],
+    "4.3 Write CDK template assertion tests": [
+      {
+        "executionId": "8a6640e5-dbe0-4f36-8e45-658053b9a3d3",
+        "chatSessionId": "sess_a3399305-b749-4e8b-8fc7-52f12ff6f2be",
+        "timestamp": 1794406592637
+      },
+      {
+        "executionId": "8a6640e5-dbe0-4f36-8e45-658053b9a3d3",
+        "chatSessionId": "sess_a3399305-b749-4e8b-8fc7-52f12ff6f2be",
+        "timestamp": 1794406644404
+      }
+    ],
+    "4. Add infrastructure and wire it in": [
+      {
+        "executionId": "8a6640e5-dbe0-4f36-8e45-658053b9a3d3",
+        "chatSessionId": "sess_a3399305-b749-4e8b-8fc7-52f12ff6f2be",
+        "timestamp": 1794406644436
+      },
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409769405
+      }
+    ],
+    "5. Final checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "31d0bdaf-8835-4ee6-90f4-294d511f51ee",
+        "chatSessionId": "sess_b918f045-3300-44be-aff7-6e15e4a0b80c",
+        "timestamp": 1794407472376
+      },
+      {
+        "executionId": "31d0bdaf-8835-4ee6-90f4-294d511f51ee",
+        "chatSessionId": "sess_b918f045-3300-44be-aff7-6e15e4a0b80c",
+        "timestamp": 1794407486982
+      },
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409111479
+      },
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409785865
+      },
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409795520
+      }
+    ],
+    "1.2 Replace `FakeTable.scan` with an index-aware `FakeTable.query`": [
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409111259
+      },
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409115141
+      },
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409304378
+      }
+    ],
+    "2.1 Update `src/export/nightly_export.py` to query the index within the Export_Window": [
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409111289
+      },
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409307000
+      },
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409483934
+      }
+    ],
+    "2.2 Rewrite the parametrized test for ticket selection": [
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409111316
+      },
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409486524
+      },
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409694350
+      }
+    ],
+    "2.6 Write unit tests for the Export_Window": [
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409111340
+      },
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409487318
+      },
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409694292
+      }
+    ],
+    "2.7 Write unit test for query pagination": [
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409111367
+      },
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409488382
+      },
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409690728
+      }
+    ],
+    "4.1 Add the index and update `infra/nightly_export.py`": [
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409111410
+      },
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409307552
+      },
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409484484
+      }
+    ],
+    "4.3 Update CDK template assertion tests": [
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409111433
+      },
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409488830
+      },
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409691308
+      }
+    ],
+    "1. Update test fakes and package scaffold": [
+      {
+        "executionId": "33961060-9735-4bb5-9fe6-c22ad88bde7d",
+        "chatSessionId": "sess_bae11a6b-45ca-482e-ac5e-0cb509dd66c2",
+        "timestamp": 1794409304409
+      }
+    ]
+  }
+}
